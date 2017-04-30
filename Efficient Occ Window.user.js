@@ -7,6 +7,7 @@
 // @match       http://sernecportal.org/portal/collections/editor/*
 // @grant       GM_addStyle
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js
+// @updateURL   https://github.com/CapPow/Efficiency-Window/raw/master/Efficient%20Occ%20Window.user.js
 
 // ==/UserScript==
 //Function defines
