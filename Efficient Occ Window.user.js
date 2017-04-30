@@ -16,7 +16,8 @@ var cookiecheck = getCookie("efficientcookie");
     if (cookiecheck !='0') {
         document.cookie = "efficientcookie=0";
         var navFwdOccIndex = (document.getElementsByName("occindex")[2].value);
-        window.location = 'http://sernecportal.org/portal/collections/editor/occurrenceeditor.php?csmode=0&occindex=' + navFwdOccIndex + '&occid=0&collid=312';
+        var thisCollId = +collId;
+         window.location = 'http://sernecportal.org/portal/collections/editor/occurrenceeditor.php?csmode=0&occindex=' + navFwdOccIndex + '&occid=0&collid=' + thisCollId;
     }else{
 
         substrateDiv.style.display = "none";
@@ -80,7 +81,7 @@ function prefetch(){
 function checkdone(){
     var doneyet = document.getElementById("activeimg-1").complete;
     if (doneyet === false){
-               setTimeout(checkdone(), 250);
+               setTimeout(checkdone(), 425);
     }else{
       SetZoom();
     }}
