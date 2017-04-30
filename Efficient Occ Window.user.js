@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Efficient Occ Window
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.35
 // @description  Make the Occ Window More Efficient for Direct From Image Data Entry
 // @author      calebadampowell@gmail.com
 // @match       http://sernecportal.org/portal/collections/editor/*
@@ -10,7 +10,6 @@
 
 // ==/UserScript==
 //Function defines
-//TEST UPDATE STUFFZ
 function Fireup(){
 var cookiecheck = getCookie("efficientcookie");
     if (cookiecheck !='0') {
