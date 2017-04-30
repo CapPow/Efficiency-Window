@@ -71,9 +71,10 @@ function prefetch(){
     var nxtOccIndex = +(document.getElementsByName("occindex")[2].value)+1;
 (function(){
     var i = document.createElement('iframe');
+     var thisCollId = +collId;
     i.style.display = 'none';
     i.onload = function() { i.parentNode.removeChild(i); };
-    i.src = 'http://sernecportal.org/portal/collections/editor/occurrenceeditor.php?csmode=0&occindex=' + nxtOccIndex + '&occid=0&collid=312';
+    i.src = 'http://sernecportal.org/portal/collections/editor/occurrenceeditor.php?csmode=0&occindex=' + nxtOccIndex + '&occid=0&collid=' + thisCollId;
     document.body.appendChild(i);
 })();
     }
