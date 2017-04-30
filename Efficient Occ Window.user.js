@@ -10,7 +10,7 @@
 
 // ==/UserScript==
 //Function defines
-
+//TEST UPDATE STUFFZ
 function Fireup(){
 var cookiecheck = getCookie("efficientcookie");
     if (cookiecheck !='0') {
