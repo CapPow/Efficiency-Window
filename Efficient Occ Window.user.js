@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Efficient Occ Window
 // @namespace    http://tampermonkey.net/
-// @version      1.41
+// @version      1.42
 // @description  Make the Occ Window More Efficient for Direct From Image Data Entry
 // @author      calebadampowell@gmail.com
 // @match       http://sernecportal.org/portal/collections/editor/*
@@ -52,8 +52,13 @@ var cookiecheck = getCookie("efficientcookie");
         cln.style.width = '25%';
         cln.style.height = 'auto';
         dest.insertBefore(cln, dest.childNodes[2]);
-
+        fieldset();
+        jQuery(document).ready(function($) {
+SetZoom();
+prefetch();
+        });
     }}
+
 
 function fieldset(){
     var cookiecheck1 = getCookie("efficientcookie1");
@@ -156,8 +161,3 @@ function doc_keyUp(e) {
 
 document.addEventListener('keyup', doc_keyUp, false);
 Fireup();
-jQuery(document).ready(function($) {
-fieldset();
-SetZoom();
-prefetch();
-});
