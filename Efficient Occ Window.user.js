@@ -56,7 +56,6 @@ var cookiecheck = getCookie("efficientcookie");
     }}
 
 function fieldset(){
-//checkdone();
     var cookiecheck1 = getCookie("efficientcookie1");
     if (document.getElementById("ffsciname").value === ""){
         if(cookiecheck1 === undefined){document.getElementById('ffsciname').focus();
