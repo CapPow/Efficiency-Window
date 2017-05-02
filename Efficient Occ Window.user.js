@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Efficient Occ Window
 // @namespace    http://tampermonkey.net/
-// @version      1.45
+// @version      1.46
 // @description  Make the Occ Window More Efficient for Direct From Image Data Entry
 // @author      calebadampowell@gmail.com
 // @match       http://sernecportal.org/portal/collections/editor/*
@@ -79,6 +79,7 @@ function prefetch(){
  setTimeout(setSrc, 5);
     })();
 function setSrc(){
+    onblur=window.focus();
     i.style.display = 'none';
     i.onload = function() { i.parentNode.removeChild(i); };
     i.src = 'http://sernecportal.org/portal/collections/editor/occurrenceeditor.php?csmode=0&occindex=' + nxtOccIndex + '&occid=0&collid=' + thisCollId;
