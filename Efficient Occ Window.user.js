@@ -57,7 +57,7 @@ var cookiecheck = getCookie("efficientcookie");
         fieldset();
         jQuery(document).ready(function($) {
         SetZoom();
-        prefetch();
+//        prefetch();
         });
     }}
 
@@ -86,7 +86,7 @@ function setSrc(){
     i.src = 'http://sernecportal.org/portal/collections/editor/occurrenceeditor.php?csmode=0&occindex=' + nxtOccIndex + '&occid=0&collid=' + thisCollId;
     document.body.appendChild(i);
 }}
-//I'm sure the above can be done better, but I don't know what i'm doing. The Goal is to stop the prefetch iframe from stealing focus and slowing onload events. Ideally, this would not be done with a hidden iframe.
+//Would like to prefetch next img while typing in first, without it stealing focus. So far, best to keep it inactivated. I have no idea how to perform this.
 function Submit(){
    var now = new Date();
    var time = now.getTime();
