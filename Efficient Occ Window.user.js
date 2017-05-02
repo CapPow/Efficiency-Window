@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Efficient Occ Window
 // @namespace    http://tampermonkey.net/
-// @version      1.42
+// @version      1.44
 // @description  Make the Occ Window More Efficient for Direct From Image Data Entry
 // @author      calebadampowell@gmail.com
 // @match       http://sernecportal.org/portal/collections/editor/*
@@ -56,8 +56,8 @@ var cookiecheck = getCookie("efficientcookie");
         dest.insertBefore(cln, dest.childNodes[2]);
         fieldset();
         jQuery(document).ready(function($) {
-SetZoom();
-prefetch();
+        SetZoom();
+        prefetch();
         });
     }}
 
@@ -71,22 +71,23 @@ function fieldset(){
                                             document.getElementById('ffsciname').select();}
     }else{document.getElementById("ffstate").focus();}
 }
-
 function prefetch(){
     var curFoc = document.activeElement;
     var nxtOccIndex = +(document.getElementsByName("occindex")[2].value)+1;
+     var i = document.createElement('iframe');
+        var thisCollId = +collId;
 (function(){
-    var i = document.createElement('iframe');
-     var thisCollId = +collId;
+ setTimeout(setSrc, 5);
+    })();
+function setSrc(){
     i.style.display = 'none';
     i.onload = function() { i.parentNode.removeChild(i); };
     i.src = 'http://sernecportal.org/portal/collections/editor/occurrenceeditor.php?csmode=0&occindex=' + nxtOccIndex + '&occid=0&collid=' + thisCollId;
     document.body.appendChild(i);
-})();
- curFoc.focus();    
 }
-
-
+ curFoc.focus();
+}
+//I'm sure the above can be done better, but I don't know what i'm doing. The Goal is to stop the prefetch iframe from stealing focus and slowing onload events. Ideally, this would not be done with a hidden iframe.
 function Submit(){
    var now = new Date();
    var time = now.getTime();
