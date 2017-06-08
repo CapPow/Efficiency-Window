@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Efficient Occ Window
 // @namespace    http://tampermonkey.net/
-// @version      1.47
+// @version      1.48
 // @description  Make the Occ Window More Efficient for Direct From Image Data Entry
 // @author      calebadampowell@gmail.com
 // @match       http://sernecportal.org/portal/collections/editor/*
@@ -63,13 +63,21 @@ var cookiecheck = getCookie("efficientcookie");
 
 
 function fieldset(){
-    var cookiecheck1 = getCookie("efficientcookie1");
+    var cookiechecksciName = getCookie("efficientcookiesciName");
+    var cookiecheckstaName = getCookie("efficientcookiestaName");
     if (document.getElementById("ffsciname").value === ""){
-        if(cookiecheck1 === undefined){document.getElementById('ffsciname').focus();
-                                      }else{document.getElementById('ffsciname').value = getCookie("efficientcookie1");
+        if(cookiechecksciName === undefined){document.getElementById('ffsciname').focus();
+                                      }else{document.getElementById('ffsciname').value = getCookie("efficientcookiesciName");
                                             document.getElementById('ffsciname').focus();
                                             document.getElementById('ffsciname').select();}
-    }else{document.getElementById("ffstate").focus();}
+    }
+    else if (document.getElementById("ffstate").value === ""){
+        if(cookiecheckstaName === undefined){document.getElementById('ffstate').focus();
+                                      }else{document.getElementById('ffstate').value = getCookie("efficientcookiestaName");
+                                            document.getElementById('ffstate').focus();
+                                            document.getElementById('ffstate').select();}
+    }
+    else{document.getElementById("ffcounty").focus();}
 }
 function prefetch(){
     var nxtOccIndex = +(document.getElementsByName("occindex")[2].value)+1;
@@ -93,8 +101,10 @@ function Submit(){
      time += 20 * 1000;     // first value is in seconds
      now.setTime(time);
     document.cookie = "efficientcookie=1";
-    var SciName= document.getElementById("ffsciname").value;
-    document.cookie = "efficientcookie1="+ SciName+ '; expires=' + now.toUTCString() + '; path=/';
+    var sciName= document.getElementById("ffsciname").value;
+    document.cookie = "efficientcookiesciName="+ sciName+ '; expires=' + now.toUTCString() + '; path=/';
+    var staName = document.getElementById("ffstate").value;
+    document.cookie = "efficientcookiestaName="+ staName+ '; expires=' + now.toUTCString() + '; path=/';
     var clickme= document.getElementsByName('submitaction')[2].click(clickme);}
 
 function SetZoomOut(){
