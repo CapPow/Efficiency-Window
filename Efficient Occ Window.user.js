@@ -48,6 +48,13 @@ var cookiecheck = getCookie("efficientcookie");
         processingStatusDiv.style.display = "none";
         scientificNameAuthorshipDiv.style.display= "none";
         familyDiv.style.display= "none";
+        ometidDiv.style.display= "none";
+        occurrenceRemarksDiv.style.display= "none";
+        habitatDiv.style.display= "none";
+        institutionCodeDiv.style.display= "none";
+        collectionCodeDiv.style.display= "none";
+        dataGeneralizationsDiv.style.display= "none";
+        
         var itm = document.getElementById('activeimg-1');  //annotation check window (tiny photo)
         var dest = document.getElementById('labeldiv-1');
         var cln = itm.cloneNode(true);
