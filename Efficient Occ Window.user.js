@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Efficient Occ Window
 // @namespace    http://tampermonkey.net/
-// @version      1.48
+// @version      1.49
 // @description  Make the Occ Window More Efficient for Direct From Image Data Entry
 // @author      calebadampowell@gmail.com
 // @match       http://sernecportal.org/portal/collections/editor/*
