@@ -17,9 +17,9 @@ That should be it, you may need to restart chrome after you've taken these steps
 Basics:
 -This script's only functions are within the occurrence record editor.
 -While this script is running, it will always change the way occurrence records are displayed. 
- --This is only a user side change, so think new paint job, not a new car. 
- --When you want to revert to the original display (which shows much more data!) Just click the tampermonkey icon in upper right and click the "Enabled" button to toggle it off. 
- --In our lab, I keep it disabled when I'm not using it to avoid confusion with other users.
+	--This is only a user side change, so think new paint job, not a new car. 
+	--When you want to revert to the original display (which shows much more data!) Just click the tampermonkey icon in upper right and click the "Enabled" button to toggle it off. 
+	--In our lab, I keep it disabled when I'm not using it to avoid confusion with other users.
 -This script aims to remove, or greatly reduce mouse interaction in favor of faster keyboard hotkeys.
 -When you're ready to submit a record, always use the "Submit, and go to next" hotkey while using this script.
 -You can skip records with the normal " |< < > >| " type navigation arrows.
@@ -34,17 +34,17 @@ Features to know:
 -The "Label zoom" hotkey returns to the bottom right zoom position.
 -SERNEC already has some default native zoom hotkeys which you may find useful also, just click on the "Zoom?" link.
 -When a record opens, It may attempt to guess the scientific name or state based on the last record you submitted.
- --When it guesses a field, that field will be highlighted, this is your warning to verify it.
- --If the guess was correct, just press tab and you'll move to the next field.
- --If the guess is wrong, since it is highlighted no backspace is required. Just start typing the new value and it will replace the guess.
+	--When it guesses a field, that field will be highlighted, this is your warning to verify it.
+		--If the guess was correct, just press tab and you'll move to the next field.
+		--If the guess is wrong, since it is highlighted no backspace is required. Just start typing the new value and it will replace the guess.
 
 Getting Started:
 -To database sets of records you'll have to build a relevant search and edit the records within that search.  
---To do this, select "Edit Existing Occurrence Records" under the data editor control panel for the correct institution. This is just below the "Add Skeletal Records" that you're accustomed to using.
- --Then, build a relevant search. This is Highly modifiable to single out fields that need entered. But for now, the basic operation will probably be:
- --Check the "With Images" Box
- --In Custom field 1 select "Scientific Name" and change Equals to "IS NULL", then "Click Display Table."
- --Obviously, This type of search will return every record WITH a photo but WITHOUT a scientific name. The first few records may be ones without a legible scientific name, They're easy to spot because they have a few other fields entered. Notice after a point records are suddenly uniformly empty. That's a good starting point.
- --From this point you're ready to enter data and use the "Submit and Next Hotkey."
+	--To do this, select "Edit Existing Occurrence Records" under the data editor control panel for the correct institution. This is just below the "Add Skeletal Records" that you're accustomed to using.
+	--Then, build a relevant search. This is Highly modifiable to single out fields that need entered. But for now, the basic operation will probably be:
+	--Check the "With Images" Box
+	--In Custom field 1 select "Scientific Name" and change Equals to "IS NULL", then "Click Display Table."
+	--Obviously, This type of search will return every record WITH a photo but WITHOUT a scientific name. The first few records may be ones without a legible scientific name, They're easy to spot because they have a few other fields entered. Notice after a point records are suddenly uniformly empty. That's a good starting point.
+	--From this point you're ready to enter data and use the "Submit and Next Hotkey."
  
  
