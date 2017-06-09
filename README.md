@@ -1,6 +1,4 @@
 # Efficiency-Window
-The following are instructions for a SERNEC Userscript modification written to improve data entry from images. 
-
 Currently, this is a proof of concept and in the wrong hands has the potential to submit bad data or greatly confuse curators and other users of the device this is installed on.
    
 This is a hobby effort, the application is limited but when necessary the rates are much faster.
