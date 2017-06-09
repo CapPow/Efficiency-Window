@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Efficient Occ Window
 // @namespace    http://tampermonkey.net/
-// @version      1.49
+// @version      1.50
 // @description  Make the Occ Window More Efficient for Direct From Image Data Entry
 // @author      calebadampowell@gmail.com
 // @match       http://sernecportal.org/portal/collections/editor/*
 // @grant       GM_addStyle
 // @require     http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js
 // @updateURL   https://github.com/CapPow/Efficiency-Window/raw/master/Efficient%20Occ%20Window.user.js
-
+// @noframes
 // ==/UserScript==
 //Function defines
 function Fireup(){
@@ -64,7 +64,7 @@ var cookiecheck = getCookie("efficientcookie");
         fieldset();
         jQuery(document).ready(function($) {
         SetZoom();
-//        prefetch();
+        prefetch();
         });
     }}
 
@@ -94,14 +94,14 @@ function prefetch(){
  setTimeout(setSrc, 5);
     })();
 function setSrc(){
-    var curFoc = document.activeElement;
-    window.onblur = curFoc.focus();
+//    var curFoc = document.activeElement; Testing methods to avoid focus theft.
+//    window.onblur = curFoc.focus();
     i.style.display = 'none';
     i.onload = function() { i.parentNode.removeChild(i); };
     i.src = 'http://sernecportal.org/portal/collections/editor/occurrenceeditor.php?csmode=0&occindex=' + nxtOccIndex + '&occid=0&collid=' + thisCollId;
     document.body.appendChild(i);
 }}
-//Would like to prefetch next img while typing in first, without it stealing focus. So far, best to keep it inactivated. I have no idea how to perform this.
+//Would like to prefetch next img while typing in first. Occasionally had issues with this stealing focus while typing. Maybe solved (unknown how)
 function Submit(){
    var now = new Date();
    var time = now.getTime();
